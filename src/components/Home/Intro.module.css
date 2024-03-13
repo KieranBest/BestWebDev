@@ -1,20 +1,47 @@
 @import "../../vars.css";
 
 .container {
+    margin-top: 79px;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-bottom: 35px;
+    color: var(--white-color);
+}
+
+.content {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    min-height: 70vh;
+    flex-direction: column;
+    justify-content: space-evenly;    
+}
+
+.paragraph {
+    padding: 20px 0;
+    gap: 20px;
+}
+
+p a {
+    font-weight: bold;
+    color: var(--white-color);
 }
 
 h1 {
-    padding-top: 5%;
+    padding-top: 50px;
+    text-align: center;
+}
+
+h2, h3, h4{
+    padding-top: 3%;
     text-align: center;
 }
 
 p {
     padding-top: 3%;
-    margin-left: 5%;
-    margin-right: 5%;
     text-align: center;
+    line-height: 2rem;
+}
+
+@media screen and (max-width: 830px){
+    .container {
+        margin-top: 180px;
+    }
 }
