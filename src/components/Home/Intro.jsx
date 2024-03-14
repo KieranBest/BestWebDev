@@ -9,7 +9,7 @@ export const Intro = () => {
         <section className={styles.container}>
             <div className={styles.content}>
                 <div className={styles.paragraphs}>
-                    <h1>Do you need a website built?</h1>
+                    <h1>Get a Website with No Fuss.</h1>
                     <h2>Are you a local business?</h2>
                     <h3>Let's see what I can do for you</h3>
                 </div>
