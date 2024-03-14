@@ -8,10 +8,9 @@
     width: 100%;
 }
 
-.content {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;    
+.title {
+    padding-top: 250px;
+    padding-bottom: 350px;
 }
 
 .paragraph {
@@ -19,18 +18,8 @@
     gap: 20px;
 }
 
-p a {
-    font-weight: bold;
-    color: var(--font-light-color);
-}
-
 h1 {
     padding-top: 50px;
-    text-align: center;
-}
-
-h2, h3, h4{
-    padding-top: 3%;
     text-align: center;
 }
 

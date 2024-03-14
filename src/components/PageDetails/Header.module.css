@@ -18,9 +18,10 @@ header {
 }
 
 .title {
-    font-size: 35px;
+    font-size: 45px;
     font-weight: 600;
     text-decoration: none;
+    padding-right: 55px;
 }
 
 .menuItems {
@@ -37,7 +38,11 @@ header {
 }
 
 .menuItems a:hover {
-    color: var(--font-dark-color);
+    color: var(--font-medium-color);
+}
+
+.links {
+    padding-left: 100%;
 }
 
 @media screen and (max-width: 830px) {
