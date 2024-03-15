@@ -11,6 +11,7 @@ import { Restaurant2 } from './Pages/Restaurant2';
 
 import { Header } from './components/PageDetails/Header';
 import { Footer } from './components/PageDetails/Footer';
+
 const App = () => {
   return (
     <Router>
