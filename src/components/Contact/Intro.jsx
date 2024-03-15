@@ -8,13 +8,11 @@ export const Intro = () => {
     return (
         <section className={styles.container}>
             <div className={styles.content}>
-                <h1 className={styles.title}>Get a Website with No Fuss.</h1>
+                <h1 className={styles.title}>Contact.</h1>
                 <div className={styles.paragraph}>
-                    <p>
-                        Creating websites that are fast, secure, and easy to
-                        manage. We specialize in websites for small businesses,
-                        non-profits, and individuals.
-                    </p>
+                    <p>So you wish to get in contact?</p>
+                    <p>Well, you've come to the right place.</p>
+                    <p>Fill out the form below and we'll get back to you as soon as we can.</p>
                 </div>
             </div>
         </section>

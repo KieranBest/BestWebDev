@@ -7,9 +7,11 @@ export const Header = () => {
         <header>
             <nav className="navbar">
                 <ul className={styles.menuItems}>
-                    <li><a className={styles.title} href="/">Home</a></li>
-                    <li><a className={styles.links} href="/About">About</a></li>
-                    <li><a className={styles.links} href="/Contact">Contact</a></li>
+                    <li className={styles.title}><a href="/">Home</a></li>
+                    <div className={styles.subTitles}>
+                        <li className={styles.links}><a href="/Contact">Contact</a></li>
+                        <li className={styles.links}><a href="/About">About</a></li>
+                    </div>
                 </ul>
             </nav>
         </header>

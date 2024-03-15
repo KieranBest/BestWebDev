@@ -1,12 +1,13 @@
 import React from "react";
 
 import { Intro } from '../components/Home/Intro';
-import { Projects } from "../components/Home/Projects";
+import { Portfolios } from "../components/Home/Portfolios";
+
 export const Home = () => {
     return (
         <div>
             < Intro />
-            < Projects />
+            < Portfolios />
         </div>
     );
 }

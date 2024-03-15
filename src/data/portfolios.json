@@ -1,19 +1,19 @@
 [
     {
         "title": "Restaurant 1",
-        "imageSrc": "projectIdeasImg/restaurant1.png",
+        "imageSrc": "portfolioImg/restaurant1.png",
+        "description": "A portfolio website for a pub/restaurant. The website includes a home page, a menu page, a contact page, and a gallery page.",
+        "source": "/restaurant1"
+    },
+    {
+        "title": "Restaurant 1",
+        "imageSrc": "portfolioImg/restaurant1.png",
         "description": "Restaurant 1 description",
         "source": "/restaurant1"
     },
     {
         "title": "Restaurant 1",
-        "imageSrc": "projectIdeasImg/restaurant1.png",
-        "description": "Restaurant 1 description",
-        "source": "/restaurant1"
-    },
-    {
-        "title": "Restaurant 1",
-        "imageSrc": "projectIdeasImg/restaurant1.png",
+        "imageSrc": "portfolioImg/restaurant1.png",
         "description": "Restaurant 1 description",
         "source": "/restaurant1"
     }

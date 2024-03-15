@@ -17,13 +17,6 @@ header {
     z-index: 2;
 }
 
-.title {
-    font-size: 45px;
-    font-weight: 600;
-    text-decoration: none;
-    padding-right: 55px;
-}
-
 .menuItems {
     display: flex;
     gap: 47px;
@@ -41,13 +34,34 @@ header {
     color: var(--font-medium-color);
 }
 
+.title {
+    font-size: 45px;
+    font-weight: 600;
+    text-decoration: none;
+    padding-right: 55px;
+}
+
+.subTitles li{
+    float: right;
+}
+
 .links {
-    padding-left: 100%;
+    margin: 25px 5%;
 }
 
 @media screen and (max-width: 830px) {
     .menuItems {
         flex-direction: column;
-        gap: 17px !important;  
+        gap: 1px !important;  
+        margin: 5px 0;
+    }
+
+    .title {
+        padding-right: 0;
+    }
+    
+    .subTitles  li{
+        float: none;
+        text-align: center;
     }
 }
