@@ -1,56 +1,67 @@
-import React from "react";
-import { useState } from 'react';
-import emailjs from '@emailjs/browser';
+import React, { useState } from "react";
+import emailjs from 'emailjs-com';
 
 import "../../App.css";
 
 import styles from "./Form.module.css";
 
 export const Form = () => {
-    const [isSubmitting, setIsSubmitting] = useState(false);
-    const [stateMessage, setStateMessage] = useState(null);
 
-    const sendEmail = (e) => {
-        e.persist();
+    const [name, setName] = useState('');
+    const [email, setEmail] = useState('');
+    const [message, setMessage] = useState('');
+
+    const handleSubmit = (e) => {
         e.preventDefault();
-        setIsSubmitting(true);
-        emailjs
-        .sendForm(
+        
+        const templateParams = {
+            from_name: name,
+            from_email: email,
+            message: message,
+            to_name: "Bossman",
+        };
+
+        emailjs.send(
             process.env.REACT_APP_SERVICE_ID,
             process.env.REACT_APP_TEMPLATE_ID,
-            e.target,
+            templateParams,
             process.env.REACT_APP_PUBLIC_KEY
         )
-        .then(
-            (result) => {
-            setStateMessage('Message sent!');
-            setIsSubmitting(false);
-            setTimeout(() => {
-                setStateMessage(null);
-            }, 5000); // hide message after 5 seconds
-            },
-            (error) => {
-            setStateMessage('Something went wrong, please try again later');
-            setIsSubmitting(false);
-            setTimeout(() => {
-                setStateMessage(null);
-            }, 5000); // hide message after 5 seconds
-            }
-        );
-        
-        // Clears the form after sending the email
-        e.target.reset();
-    };
+        .then((response) => {
+            console.log('Email sent successfully!', response);
+            setName('');
+            setEmail('');
+            setMessage('');
+        })
+        .catch((error) => {
+            console.log(error.text);
+        });
+    }
+
     return (
-        <form onSubmit={sendEmail}>
-        <label>Name</label>
-        <input type="text" name="user_name" placeholder="name" />
-        <label>Email</label>
-        <input type="email" name="user_email" placeholder="email" />
-        <label>Message</label>
-        <textarea name="message" placeholder="message" />
-        <input type="submit" value="Send" disabled={isSubmitting} />
-        {stateMessage && <p>{stateMessage}</p>}
-        </form>
-    );
+        <div className={styles.container}>
+            <form onSubmit={handleSubmit} className="emailForm">
+                <input className={styles.input}
+                    type="text"
+                    value={name}
+                    placeholder="Name"
+                    onChange={(e) => setName(e.target.value)}
+                />
+                <input className={styles.input}
+                    type="email"
+                    value={email}
+                    placeholder="Email"
+                    onChange={(e) => setEmail(e.target.value)}
+                />
+                <textarea className={styles.input}
+                    cols="30"
+                    rows="10"
+                    value={message}
+                    placeholder="Enter your message here..."
+                    onChange={(e) => setMessage(e.target.value)}
+                />
+                <button type="submit">Send</button>
+            </form>
+        </div>
+    )
 };

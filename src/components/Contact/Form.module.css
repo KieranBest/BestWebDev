@@ -17,5 +17,32 @@ h1 {
 }
 
 form {
-    
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+button {
+    width: 50%;
+    padding: 15px;
+    border-radius: 5px;
+    border: none;
+    background-color: var(--background-dark-color);
+    color: var(--font-light-color);
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.input {
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    font-size: 1.2rem;
+    color: var(--font-dark-color);
+    border: 1px solid var(--background-dark-color);
 }
