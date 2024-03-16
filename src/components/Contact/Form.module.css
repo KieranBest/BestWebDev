@@ -16,7 +16,7 @@ h1 {
     padding-top: 50px;
 }
 
-form {
+.content {
     width: 80%;
     margin: 0 auto;
     display: flex;
@@ -36,7 +36,7 @@ button {
     transition: all 0.3s ease;
 }
 
-.input {
+input {
     width: 100%;
     margin-bottom: 20px;
     padding: 10px;

@@ -1,67 +1,68 @@
-import React, { useState } from "react";
-import emailjs from 'emailjs-com';
-
+import { useState } from "react";
 import "../../App.css";
+import { sendCustomEmail } from "./SendEmail";
 
 import styles from "./Form.module.css";
 
 export const Form = () => {
+    const [details, setDetails] = useState({
+        from_name: "",
+        reply_to: "",
+        message: "",
+    });
 
-    const [name, setName] = useState('');
-    const [email, setEmail] = useState('');
-    const [message, setMessage] = useState('');
+    const handleDetailsChange = (event) => {
+        const { name, value } = event.target;
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        
-        const templateParams = {
-            from_name: name,
-            from_email: email,
-            message: message,
-            to_name: "Bossman",
-        };
-
-        emailjs.send(
-            process.env.REACT_APP_SERVICE_ID,
-            process.env.REACT_APP_TEMPLATE_ID,
-            templateParams,
-            process.env.REACT_APP_PUBLIC_KEY
-        )
-        .then((response) => {
-            console.log('Email sent successfully!', response);
-            setName('');
-            setEmail('');
-            setMessage('');
-        })
-        .catch((error) => {
-            console.log(error.text);
+        setDetails((prevDetails) => {
+            return {
+            ...prevDetails,
+            [name]: value,
+            };
         });
-    }
+    };
+
+    const handleSendEmail = () => {
+        sendCustomEmail(details);
+    };
 
     return (
-        <div className={styles.container}>
-            <form onSubmit={handleSubmit} className="emailForm">
-                <input className={styles.input}
+        <div className="container">
+            <div className={styles.content}>
+                <div className={styles.input}>
+                <input
+                    name="from_name"
+                    value={details.from_name}
+                    onChange={handleDetailsChange}
                     type="text"
-                    value={name}
                     placeholder="Name"
-                    onChange={(e) => setName(e.target.value)}
                 />
-                <input className={styles.input}
+                </div>
+                <div className={styles.input}>
+                <input
+                    name="reply_to"
+                    value={details.reply_to}
+                    onChange={handleDetailsChange}
                     type="email"
-                    value={email}
-                    placeholder="Email"
-                    onChange={(e) => setEmail(e.target.value)}
+                    placeholder="Email Address"
                 />
-                <textarea className={styles.input}
-                    cols="30"
-                    rows="10"
-                    value={message}
-                    placeholder="Enter your message here..."
-                    onChange={(e) => setMessage(e.target.value)}
+                </div>
+                <div className={styles.input}>
+                <input
+                    name="message"
+                    value={details.message}
+                    onChange={handleDetailsChange}
+                    type="text"
+                    placeholder="Please enter your message"
                 />
-                <button type="submit">Send</button>
-            </form>
+                </div>
+                <button
+                    disabled={!details.from_name || !details.reply_to || !details.message}
+                    onClick={handleSendEmail}
+                >
+                <span>Send Email</span>
+                </button>
+            </div>
         </div>
-    )
+    );
 };
