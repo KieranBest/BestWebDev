@@ -29,7 +29,6 @@ export const Form = () => {
     return (
         <div className="container">
             <div className={styles.content}>
-                <div className={styles.input}>
                 <input
                     name="from_name"
                     value={details.from_name}
@@ -37,8 +36,6 @@ export const Form = () => {
                     type="text"
                     placeholder="Name"
                 />
-                </div>
-                <div className={styles.input}>
                 <input
                     name="reply_to"
                     value={details.reply_to}
@@ -46,16 +43,13 @@ export const Form = () => {
                     type="email"
                     placeholder="Email Address"
                 />
-                </div>
-                <div className={styles.input}>
-                <input
+                <textarea
                     name="message"
                     value={details.message}
                     onChange={handleDetailsChange}
                     type="text"
                     placeholder="Please enter your message"
                 />
-                </div>
                 <button
                     disabled={!details.from_name || !details.reply_to || !details.message}
                     onClick={handleSendEmail}
