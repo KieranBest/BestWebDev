@@ -25,7 +25,6 @@ export const Form = () => {
     const handleSendEmail = () => {
         sendCustomEmail(details);
         resetFields();
-        popUpText();
     };
 
     const resetFields = () => {
@@ -33,11 +32,6 @@ export const Form = () => {
         document.getElementById('emailInput').value = "";
         document.getElementById('messageInput').value = "";
     };
-
-    const popUpText = () => {
-        var popup = document.getElementById("myPopup");
-        popup.classList.toggle("show");
-    }
 
     return (
         <div className="container">
@@ -73,10 +67,6 @@ export const Form = () => {
                 >
                 <span>Send Email</span>
                 </button>
-
-                <div className={styles.popup}>
-                    <span className={styles.popuptext} id="myPopup">Popup text...</span>
-                </div>
             </div>
         </div>
     );
