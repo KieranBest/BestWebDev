@@ -14,6 +14,9 @@ const sendCustomEmail = (details) => {
     )
     .then((response) => {
         console.log(response);
+        details.from_name = "Name";
+        details.reply_to = "Email Address";
+        details.message = "Please enter your message";
     })
     .catch((error) => {
         console.log(error);

@@ -24,12 +24,26 @@ export const Form = () => {
 
     const handleSendEmail = () => {
         sendCustomEmail(details);
+        resetFields();
+        popUpText();
     };
+
+    const resetFields = () => {
+        document.getElementById('nameInput').value = "";
+        document.getElementById('emailInput').value = "";
+        document.getElementById('messageInput').value = "";
+    };
+
+    const popUpText = () => {
+        var popup = document.getElementById("myPopup");
+        popup.classList.toggle("show");
+    }
 
     return (
         <div className="container">
             <div className={styles.content}>
-                <input
+                <input 
+                    id="nameInput"
                     name="from_name"
                     value={details.from_name}
                     onChange={handleDetailsChange}
@@ -37,6 +51,7 @@ export const Form = () => {
                     placeholder="Name"
                 />
                 <input
+                    id="emailInput"
                     name="reply_to"
                     value={details.reply_to}
                     onChange={handleDetailsChange}
@@ -44,6 +59,7 @@ export const Form = () => {
                     placeholder="Email Address"
                 />
                 <textarea
+                    id="messageInput"
                     name="message"
                     value={details.message}
                     onChange={handleDetailsChange}
@@ -53,9 +69,14 @@ export const Form = () => {
                 <button
                     disabled={!details.from_name || !details.reply_to || !details.message}
                     onClick={handleSendEmail}
+                    type=""
                 >
                 <span>Send Email</span>
                 </button>
+
+                <div className={styles.popup}>
+                    <span className={styles.popuptext} id="myPopup">Popup text...</span>
+                </div>
             </div>
         </div>
     );
