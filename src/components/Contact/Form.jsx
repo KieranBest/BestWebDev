@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "../../App.css";
 import { sendCustomEmail } from "./SendEmail";
+import swal from "sweetalert2";
 
 import styles from "./Form.module.css";
 
@@ -23,21 +24,69 @@ export const Form = () => {
     };
 
     const handleSendEmail = () => {
-        sendCustomEmail(details);
-        resetFields();
+        if (emailValid() && nameValid() && messageValid()) {
+            sendCustomEmail(details);
+            resetFields();
+        } else {
+            runError();
+        };
     };
 
     const resetFields = () => {
-        document.getElementById('nameInput').value = "";
-        document.getElementById('emailInput').value = "";
-        document.getElementById('messageInput').value = "";
+        setDetails({
+            from_name: "",
+            reply_to: "",
+            message: "",
+        });
+    };
+
+    let errorReason = '';
+
+    const emailValid = () => {
+        if (details.reply_to.includes('@') && details.reply_to.includes('.') || !details.reply_to === "") {
+            return true;
+        } else {
+            errorReason = 'Your email is invalid. Please try again.';
+            return false;
+        };
+    };
+
+    const nameValid = () => {
+        if (details.from_name.length > 0) {
+            return true;
+        } else {
+            errorReason = 'Your name is invalid. Please try again.';
+            return false;
+        };
+    };
+
+    const messageValid = () => {
+        if (details.message.length > 0) {
+            return true;
+        } else {
+            errorReason = 'Your message is invalid. Please try again.';
+            return false;
+        };
+    };
+
+    const runError = () => {
+        if(!emailValid() || !nameValid() || !messageValid()) {
+            swal.fire({
+                icon: 'error',
+                title: errorReason,
+                animation: true,
+                position: 'center',
+                showConfirmButton: false,
+                timer: 4000,
+                timerProgressBar: true,
+            })
+        };
     };
 
     return (
         <div className="container">
             <div className={styles.content}>
                 <input 
-                    id="nameInput"
                     name="from_name"
                     value={details.from_name}
                     onChange={handleDetailsChange}
@@ -45,7 +94,6 @@ export const Form = () => {
                     placeholder="Name"
                 />
                 <input
-                    id="emailInput"
                     name="reply_to"
                     value={details.reply_to}
                     onChange={handleDetailsChange}
@@ -53,15 +101,14 @@ export const Form = () => {
                     placeholder="Email Address"
                 />
                 <textarea
-                    id="messageInput"
                     name="message"
                     value={details.message}
                     onChange={handleDetailsChange}
                     type="text"
                     placeholder="Please enter your message"
+                    
                 />
                 <button
-                    disabled={!details.from_name || !details.reply_to || !details.message}
                     onClick={handleSendEmail}
                     type=""
                 >

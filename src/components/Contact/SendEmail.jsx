@@ -1,4 +1,5 @@
 import emailjs from "@emailjs/browser";
+import swal from "sweetalert2";
 
 const sendCustomEmail = (details) => {
     emailjs.init(import.meta.env.VITE_EMAIL_USER_KEY);
@@ -14,12 +15,27 @@ const sendCustomEmail = (details) => {
     )
     .then((response) => {
         console.log(response);
-        details.from_name = "Name";
-        details.reply_to = "Email Address";
-        details.message = "Please enter your message";
+        swal.fire({
+            icon: 'success',
+            title: 'Sent Successfully',
+            animation: true,
+            position: 'center',
+            showConfirmButton: false,
+            timer: 4000,
+            timerProgressBar: true,
+        })
     })
     .catch((error) => {
         console.log(error);
+        swal.fire({
+            icon: 'error',
+            title: ' Error Sending Message',
+            animation: true,
+            position: 'center',
+            showConfirmButton: false,
+            timer: 4000,
+            timerProgressBar: true,
+        })
     });
 };
 
