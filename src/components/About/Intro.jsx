@@ -8,7 +8,7 @@ export const Intro = () => {
             <div className=" font-poppins flex h-[90vh] flex-col flex-1 items-center justify-center bg-black">
                 <h1 className="mx-5 h-[40vh] text-6xl text-white animate-slidein opacity-0 [--slidein-delay:600ms]">About.</h1>
             </div>
-            <div className="flex h-[30vh] flex-col flex-1 items-center justify-center bg-black">
+            <div className="flex h-[30vh] flex-col flex-1 items-center justify-center bg-black text-center">
                 <p className="m-5 text-2xl text-white">Working as a 1 man team to create a website that you can be proud of.</p>
                 <p className="m-5 text-2xl text-white">Charging a minimal amount to ensure that you're business can thrive.</p>
                 <p className="mx-5 text-2xl text-white font-bold">Costs include:</p>
