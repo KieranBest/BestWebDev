@@ -1,18 +1,15 @@
 import React from "react";
 
-import styles from "./Header.module.css";
-
 export const Header = () => {
     return (
-        <header>
-            <nav className="navbar">
-                <ul className={styles.menuItems}>
-                    <li className={styles.title}><a href="/">Home</a></li>
-                    <div className={styles.subTitles}>
-                        <li className={styles.links}><a href="/Contact">Contact</a></li>
-                        <li className={styles.links}><a href="/About">About</a></li>
-                    </div>
-                </ul>
+        <header className="font-poppins">
+            <nav className="relative flex w-full flex-nowrap items-center justify-between bg-black h-[10vh]"
+            data-twe-navbar-ref>
+                <div className="flex w-full flex-wrap items-center px-3 text-white justify-evenly">
+                    <a className="mr-2 hover:text-slate-500 hover:underline font-bold text-2xl" href="/">Home</a>
+                    <a className="hover:text-slate-500 hover:underline font-medium text-xl" href="/Contact">Contact</a>
+                    <a className="ml-2 hover:text-slate-500 hover:underline font-medium text-xl" href="/About">About</a>
+                </div>
             </nav>
         </header>
     );
