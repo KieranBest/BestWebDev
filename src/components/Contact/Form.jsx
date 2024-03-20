@@ -84,15 +84,15 @@ export const Form = () => {
     return (
         <section className="font-poppins">
             <div className="flex flex-col items-center justify-center my-8">
-                <form class="w-full max-w-sm">
-                    <div class="md:flex md:items-center mb-6">
-                        <div class="md:w-1/3">
-                            <label class="block text-black font-bold md:text-right mb-1 md:mb-0 pr-4" for="inline-full-name">
+                <form className="w-full max-w-sm">
+                    <div className="md:flex md:items-center mb-6">
+                        <div className="md:w-1/3">
+                            <label className="block text-black font-bold md:text-right mb-1 md:mb-0 pr-4" for="inline-full-name">
                                 Full Name
                             </label>
                         </div>
-                        <div class="md:w-2/3">
-                            <input class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" 
+                        <div className="md:w-2/3">
+                            <input className="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" 
                                 name="from_name"
                                 value={details.from_name}
                                 onChange={handleDetailsChange}
@@ -101,14 +101,14 @@ export const Form = () => {
                             />
                         </div>
                     </div>
-                    <div class="md:flex md:items-center mb-6">
-                        <div class="md:w-1/3">
-                            <label class="block text-black font-bold md:text-right mb-1 md:mb-0 pr-4" for="inline-full-name">
+                    <div className="md:flex md:items-center mb-6">
+                        <div className="md:w-1/3">
+                            <label className="block text-black font-bold md:text-right mb-1 md:mb-0 pr-4" for="inline-full-name">
                                 Email Address
                             </label>
                         </div>
-                        <div class="md:w-2/3">
-                            <input class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" 
+                        <div className="md:w-2/3">
+                            <input className="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" 
                                 name="reply_to"
                                 value={details.reply_to}
                                 onChange={handleDetailsChange}
@@ -117,14 +117,14 @@ export const Form = () => {
                             />
                         </div>
                     </div>
-                    <div class="md:flex md:items-center mb-6">
-                        <div class="md:w-1/3">
-                            <label class="block text-black font-bold md:text-right mb-1 md:mb-0 pr-4" for="inline-full-name">
+                    <div className="md:flex md:items-center mb-6">
+                        <div className="md:w-1/3">
+                            <label className="block text-black font-bold md:text-right mb-1 md:mb-0 pr-4" for="inline-full-name">
                                 Location
                             </label>
                         </div>
-                        <div class="md:w-2/3">
-                            <input class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" 
+                        <div className="md:w-2/3">
+                            <input className="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" 
                                 name="reply_to"
                                 value={details.reply_to}
                                 onChange={handleDetailsChange}
@@ -133,14 +133,14 @@ export const Form = () => {
                             />
                         </div>
                     </div>
-                    <div class="md:flex md:items-center mb-6">
-                        <div class="md:w-1/3">
-                            <label class="block text-black font-bold md:text-right mb-1 md:mb-0 pr-4" for="inline-full-name">
+                    <div className="md:flex md:items-center mb-6">
+                        <div className="md:w-1/3">
+                            <label className="block text-black font-bold md:text-right mb-1 md:mb-0 pr-4" for="inline-full-name">
                                 Message
                             </label>
                         </div>
-                        <div class="md:w-2/3">
-                            <textarea class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500 resize-none"
+                        <div className="md:w-2/3">
+                            <textarea className="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500 resize-none"
                                 rows="4"
                                 cols="50"
                                 name="message"
@@ -151,10 +151,10 @@ export const Form = () => {
                             />
                         </div>
                     </div>
-                    <div class="md:flex md:items-center">
-                        <div class="md:w-1/3"></div>
-                        <div class="md:w-2/3">
-                        <button class="shadow bg-black hover:bg-slate-600 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
+                    <div className="md:flex md:items-center">
+                        <div className="md:w-1/3"></div>
+                        <div className="md:w-2/3">
+                        <button className="shadow bg-black hover:bg-slate-600 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
                             onClick={handleSendEmail}
                             type="">
                             Sign Up
