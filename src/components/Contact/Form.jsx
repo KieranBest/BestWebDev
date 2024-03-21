@@ -1,12 +1,12 @@
 import { useState } from "react";
 import "../../App.css";
+
 import { sendCustomEmail } from "./SendEmail";
-import swal from "sweetalert2";
 
 export const Form = () => {
     const [details, setDetails] = useState({
-        from_name: "",
-        reply_to: "",
+        name: "",
+        email: "",
         message: "",
     });
 
@@ -22,63 +22,7 @@ export const Form = () => {
     };
 
     const handleSendEmail = () => {
-        if (emailValid() && nameValid() && messageValid()) {
             sendCustomEmail(details);
-            resetFields();
-        } else {
-            runError();
-        };
-    };
-
-    const resetFields = () => {
-        setDetails({
-            from_name: "",
-            reply_to: "",
-            message: "",
-        });
-    };
-
-    let errorReason = '';
-
-    const emailValid = () => {
-        if (details.reply_to.includes('@') && details.reply_to.includes('.') || !details.reply_to === "") {
-            return true;
-        } else {
-            errorReason = 'Your email is invalid. Please try again.';
-            return false;
-        };
-    };
-
-    const nameValid = () => {
-        if (details.from_name.length > 0) {
-            return true;
-        } else {
-            errorReason = 'Your name is invalid. Please try again.';
-            return false;
-        };
-    };
-
-    const messageValid = () => {
-        if (details.message.length > 0) {
-            return true;
-        } else {
-            errorReason = 'Your message is invalid. Please try again.';
-            return false;
-        };
-    };
-
-    const runError = () => {
-        if(!emailValid() || !nameValid() || !messageValid()) {
-            swal.fire({
-                icon: 'error',
-                title: errorReason,
-                animation: true,
-                position: 'center',
-                showConfirmButton: false,
-                timer: 4000,
-                timerProgressBar: true,
-            })
-        };
     };
 
     return (
@@ -87,30 +31,30 @@ export const Form = () => {
                 <form className="w-full max-w-sm">
                     <div className="md:flex md:items-center mb-6">
                         <div className="md:w-1/3">
-                            <label className="block text-black font-bold md:text-right mb-1 md:mb-0 pr-4" for="inline-full-name">
+                            <label className="block text-black font-bold md:text-right mb-1 md:mb-0 pr-4">
                                 Full Name
                             </label>
                         </div>
                         <div className="md:w-2/3">
                             <input className="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" 
-                                name="from_name"
-                                value={details.from_name}
+                                name="name"
+                                value={details.name}
                                 onChange={handleDetailsChange}
-                                type="text"
+                                type="name"
                                 placeholder="John Doe"
                             />
                         </div>
                     </div>
                     <div className="md:flex md:items-center mb-6">
                         <div className="md:w-1/3">
-                            <label className="block text-black font-bold md:text-right mb-1 md:mb-0 pr-4" for="inline-full-name">
+                            <label className="block text-black font-bold md:text-right mb-1 md:mb-0 pr-4">
                                 Email Address
                             </label>
                         </div>
                         <div className="md:w-2/3">
                             <input className="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" 
-                                name="reply_to"
-                                value={details.reply_to}
+                                name="email"
+                                value={details.email}
                                 onChange={handleDetailsChange}
                                 type="email"
                                 placeholder="John@Doe.co.uk"
@@ -119,23 +63,7 @@ export const Form = () => {
                     </div>
                     <div className="md:flex md:items-center mb-6">
                         <div className="md:w-1/3">
-                            <label className="block text-black font-bold md:text-right mb-1 md:mb-0 pr-4" for="inline-full-name">
-                                Location
-                            </label>
-                        </div>
-                        <div className="md:w-2/3">
-                            <input className="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" 
-                                name="reply_to"
-                                value={details.reply_to}
-                                onChange={handleDetailsChange}
-                                type="text"
-                                placeholder="Maidstone, Kent"
-                            />
-                        </div>
-                    </div>
-                    <div className="md:flex md:items-center mb-6">
-                        <div className="md:w-1/3">
-                            <label className="block text-black font-bold md:text-right mb-1 md:mb-0 pr-4" for="inline-full-name">
+                            <label className="block text-black font-bold md:text-right mb-1 md:mb-0 pr-4">
                                 Message
                             </label>
                         </div>
@@ -156,8 +84,9 @@ export const Form = () => {
                         <div className="md:w-2/3">
                         <button className="shadow bg-black hover:bg-slate-600 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
                             onClick={handleSendEmail}
-                            type="">
-                            Sign Up
+                            type=""
+                            >
+                            Submit
                         </button>
                         </div>
                     </div>

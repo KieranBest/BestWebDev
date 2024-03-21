@@ -8,8 +8,8 @@ const sendCustomEmail = (details) => {
         import.meta.env.VITE_EMAIL_SERVICE_ID,
         import.meta.env.VITE_EMAIL_TEMPLATE_ID,
         {
-        from_name: details.from_name,
-        reply_to: details.reply_to,
+        from_name: details.name,
+        reply_to: details.email,
         message: details.message,
         }
     )
@@ -29,7 +29,7 @@ const sendCustomEmail = (details) => {
         console.log(error);
         swal.fire({
             icon: 'error',
-            title: ' Error Sending Message',
+            title: 'Error Sending Message',
             animation: true,
             position: 'center',
             showConfirmButton: false,
