@@ -30,18 +30,18 @@ export const Form = () => {
             });
             return false;
         } else {
+            sendEmail();
+            form.current.reset();
             swal.fire({
                 icon: "success",
                 title: "Message Sent!",
                 text: "Message is required!",
             });
-            sendEmail();
             return true;
         }
     }
 
     const sendEmail = () => {
-
         emailjs
         .sendForm(
             import.meta.env.VITE_EMAIL_SERVICE_ID, 
@@ -60,14 +60,58 @@ export const Form = () => {
     };
 
     return (
-        <form ref={form} onSubmit={checkValidation} className="font-poppins">
-        <label>Name</label>
-        <input type="text" name="name" />
-        <label>Email</label>
-        <input type="email" name="email" />
-        <label>Message</label>
-        <textarea name="message" />
-        <input type="submit" value="Send" />
-        </form>
+        <section className="font-poppins ">
+            <div className="flex flex-col items-center justify-center my-8">
+                <form ref={form} onSubmit={checkValidation} className=" w-10/12 max-w-xl">
+                    <div className="sm:flex sm:items-center mb-6">
+                        <div className="sm:w-1/3">
+                            <label className="block text-black font-bold text-center sm:text-right mb-1 sm:mb-0 pr-4">
+                                Name
+                            </label>
+                        </div>
+                        <div className="sm:w-2/3">
+                            <input className="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-black"
+                                type="text" 
+                                name="name" 
+                            />
+                        </div>
+                    </div>
+                    <div className="sm:flex sm:items-center mb-6">
+                        <div className="sm:w-1/3">
+                            <label className="block text-black font-bold text-center sm:text-right mb-1 sm:mb-0 pr-4">
+                                Email
+                            </label>
+                        </div>
+                        <div className="sm:w-2/3">
+                            <input className="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-black"
+                                type="email" 
+                                name="email" 
+                            />
+                        </div>
+                    </div>
+                    <div className="sm:flex sm:items-center mb-6">
+                        <div className="sm:w-1/3">
+                            <label className="block text-black font-bold text-center sm:text-right mb-1 sm:mb-0 pr-4">
+                                Message
+                            </label>
+                        </div>
+                        <div className="sm:w-2/3">
+                            <textarea className="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-black resize-none"
+                                name="message" 
+                            />
+                        </div>
+                    </div>
+                    <div className="flex flex-col items-center justify-center">
+                        <div className="sm:w-1/3"></div>
+                        <div className="flex flex-col items-center justify-center sm:w-2/3">
+                            <input className="content-center shadow bg-black hover:bg-slate-600 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
+                            type="submit"
+                            value="Send" 
+                            />
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </section>
     );
 };
