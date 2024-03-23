@@ -7,8 +7,8 @@ export const Header = () => {
             data-twe-navbar-ref>
                 <div className="flex w-full flex-wrap items-center px-3 text-white justify-evenly">
                     <a className="mr-2 hover:text-slate-500 hover:underline font-bold text-2xl" href="/">Home</a>
-                    <a className="hover:text-slate-500 hover:underline font-medium text-xl" href="/Contact">Contact</a>
                     <a className="ml-2 hover:text-slate-500 hover:underline font-medium text-xl" href="/About">About</a>
+                    <a className="hover:text-slate-500 hover:underline font-medium text-xl" href="/Contact">Contact</a>
                 </div>
             </nav>
         </header>
