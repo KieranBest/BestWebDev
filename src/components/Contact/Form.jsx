@@ -30,6 +30,8 @@ export const Form = () => {
             });
             return false;
         } else {
+            form.current.customer_email = "kieran@bestwebdev.co.uk",
+            form.current.customer_name = "Customer Services at Best Web Dev",
             sendEmail();
             form.current.reset();
             swal.fire({
