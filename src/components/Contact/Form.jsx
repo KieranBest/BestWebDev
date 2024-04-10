@@ -72,7 +72,8 @@ export const Form = () => {
                         <div className="sm:w-2/3">
                             <input className="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-black"
                                 type="text" 
-                                name="name" 
+                                name="name"
+                                autocomplete="given-name"
                             />
                         </div>
                     </div>
@@ -86,6 +87,7 @@ export const Form = () => {
                             <input className="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-black"
                                 type="email" 
                                 name="email" 
+                                autocomplete="email"
                             />
                         </div>
                     </div>
@@ -105,8 +107,9 @@ export const Form = () => {
                         <div className="sm:w-1/3"></div>
                         <div className="flex flex-col items-center justify-center sm:w-2/3">
                             <input className="content-center shadow bg-black hover:bg-slate-600 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
-                            type="submit"
-                            value="Send" 
+                                type="submit"
+                                value="Send" 
+                                autoComplete='off'
                             />
                         </div>
                     </div>
