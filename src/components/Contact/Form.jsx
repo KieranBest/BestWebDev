@@ -65,7 +65,7 @@ export const Form = () => {
                 <form ref={form} onSubmit={checkValidation} className=" w-10/12 max-w-xl">
                     <div className="sm:flex sm:items-center mb-6">
                         <div className="sm:w-1/3">
-                            <label className="block text-black font-bold text-center sm:text-right mb-1 sm:mb-0 pr-4" for="name">
+                            <label className="block text-black font-bold text-center sm:text-right mb-1 sm:mb-0 pr-4" htmlFor="name">
                                 Name
                             </label>
                         </div>
@@ -73,13 +73,14 @@ export const Form = () => {
                             <input className="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-black"
                                 type="text" 
                                 name="name"
-                                autocomplete="given-name"
+                                id="name"
+                                autoComplete="given-name"
                             />
                         </div>
                     </div>
                     <div className="sm:flex sm:items-center mb-6">
                         <div className="sm:w-1/3">
-                            <label className="block text-black font-bold text-center sm:text-right mb-1 sm:mb-0 pr-4" for="email">
+                            <label className="block text-black font-bold text-center sm:text-right mb-1 sm:mb-0 pr-4" htmlFor="email">
                                 Email
                             </label>
                         </div>
@@ -87,19 +88,21 @@ export const Form = () => {
                             <input className="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-black"
                                 type="email" 
                                 name="email" 
-                                autocomplete="email"
+                                id="email"
+                                autoComplete="email"
                             />
                         </div>
                     </div>
                     <div className="sm:flex sm:items-center mb-6">
                         <div className="sm:w-1/3">
-                            <label className="block text-black font-bold text-center sm:text-right mb-1 sm:mb-0 pr-4" for="message">
+                            <label className="block text-black font-bold text-center sm:text-right mb-1 sm:mb-0 pr-4" htmlFor="message">
                                 Message
                             </label>
                         </div>
                         <div className="sm:w-2/3">
                             <textarea className="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-black resize-none"
-                                name="message" 
+                                name="message"
+                                id="message"
                                 autoComplete='off'
                             />
                         </div>
