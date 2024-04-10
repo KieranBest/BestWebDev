@@ -65,7 +65,7 @@ export const Form = () => {
                 <form ref={form} onSubmit={checkValidation} className=" w-10/12 max-w-xl">
                     <div className="sm:flex sm:items-center mb-6">
                         <div className="sm:w-1/3">
-                            <label className="block text-black font-bold text-center sm:text-right mb-1 sm:mb-0 pr-4">
+                            <label className="block text-black font-bold text-center sm:text-right mb-1 sm:mb-0 pr-4" for="name">
                                 Name
                             </label>
                         </div>
@@ -79,7 +79,7 @@ export const Form = () => {
                     </div>
                     <div className="sm:flex sm:items-center mb-6">
                         <div className="sm:w-1/3">
-                            <label className="block text-black font-bold text-center sm:text-right mb-1 sm:mb-0 pr-4">
+                            <label className="block text-black font-bold text-center sm:text-right mb-1 sm:mb-0 pr-4" for="email">
                                 Email
                             </label>
                         </div>
@@ -93,13 +93,14 @@ export const Form = () => {
                     </div>
                     <div className="sm:flex sm:items-center mb-6">
                         <div className="sm:w-1/3">
-                            <label className="block text-black font-bold text-center sm:text-right mb-1 sm:mb-0 pr-4">
+                            <label className="block text-black font-bold text-center sm:text-right mb-1 sm:mb-0 pr-4" for="message">
                                 Message
                             </label>
                         </div>
                         <div className="sm:w-2/3">
                             <textarea className="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-black resize-none"
                                 name="message" 
+                                autoComplete='off'
                             />
                         </div>
                     </div>
@@ -109,7 +110,6 @@ export const Form = () => {
                             <input className="content-center shadow bg-black hover:bg-slate-600 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
                                 type="submit"
                                 value="Send" 
-                                autoComplete='off'
                             />
                         </div>
                     </div>
