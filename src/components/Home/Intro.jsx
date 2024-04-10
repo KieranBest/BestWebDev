@@ -1,7 +1,7 @@
 import "../../App.css";
 
 import React, { useEffect } from "react";
-import NET from 'vanta/src/vanta.net'
+import NET from 'vanta/dist/vanta.net.min'
 
 export const Intro = () => {
     useEffect(() => {
