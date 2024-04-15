@@ -1,10 +1,10 @@
 [
     {
         "id": 0,
-        "title": "Restaurant 1",
-        "imageSrc": "portfolioImg/restaurant1.png",
-        "description": "A portfolio website for a pub/restaurant. The website includes a home page, a menu page, a contact page, and a gallery page.",
-        "source": "/restaurant1"
+        "title": "Ashton Phillips Portfolio",
+        "imageSrc": "portfolioImg/37.jpg",
+        "description": "A portfolio website for model/actor Ashton Phillips. The website contains a gallery of images, videos and a contact form.",
+        "source": "www.ashtonphillips.co.uk"
     },
     {
         "id": 1,
