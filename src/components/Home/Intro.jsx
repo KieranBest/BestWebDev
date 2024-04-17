@@ -25,7 +25,7 @@ export const Intro = () => {
     return (
         <section className="font-poppins" id="vanta">
             <div className="flex h-[90vh] items-center justify-center">
-                <h1 className="mx-5 h-[40vh] text-6xl text-white text-center animate-slidein opacity-0 [--slidein-delay:600ms]">Get a Website with <b>No Fuss</b></h1>
+                <h1 className="mx-5 h-[40vh] text-6xl text-white text-center animate-slidein opacity-0 [--slidein-delay:600ms]">Get a Website to suit your <b>Budget</b></h1>
             </div>
             <div className="flex h-[30vh] items-center justify-center">
                 <p className="mx-5 text-md sm:text-2xl text-white text-center leading-6 sm:leading-10">
