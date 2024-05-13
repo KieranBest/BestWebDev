@@ -13,7 +13,7 @@ export const Portfolios = () => {
                     {portfolios.map(item => (
                         <div key={item.id} className="m-3 max-w-xl bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 transition ease-in-out delay-150 hover:scale-125 duration-300">
                             <a href={item.source} target="_blank" className="text-black hover:text-slate-500">
-                                <img className="h-[44vh] rounded-t-lg" src={getImageUrl(item.imageSrc)} alt={item.title} />
+                                <img className="h-[44vh] object-cover object-center rounded-t-lg" src={getImageUrl(item.imageSrc)} alt={item.title} />
                                 <div className="p-5">
                                     <h5 className="mb-2 text-xl sm:text-2xl font-bold tracking-tight text-center">{item.title}</h5>
                                     <p className="mb-3 text-sm sm:text-md font-normal text-center">{item.description}</p>
