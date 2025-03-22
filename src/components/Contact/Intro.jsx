@@ -15,13 +15,10 @@ export const Intro = () => {
             scale: 1.00,
             scaleMobile: 1.00,
             backgroundColor: 0x0,
-            color1: 0xffffff,
-            color2: 0xffffff,
+            color1: 0x4554f7,
+            color2: 0x858383,
             birdSize: 0.60,
             speedLimit: 3.00,
-            separation: 57.00,
-            alignment: 47.00,
-            cohesion: 94.00
         })
     });
     return (
